@@ -1,0 +1,27 @@
+﻿PLANT_NAME,PLANT_TYPE,SUN,WATERQ,WATERF,SOIL_WETNESS,SPACE,MATURATION,YIELD,VULNERABILITIES
+Autumn Sage,Flower,"Partial, Full",,1,Well-drained,3,3,,"Powdery mildew, Corynespora Leaf spot, Aphids, Spider mites"
+Yellow Columbine,Flower,"Partial, Full",,7,Any,1.5,52,,Leaf miners
+Perennial Sunflower,Flower,Full,,1,Well-drained,4,14,,"Head rot, Stalk rot"
+Agastache,Flower,"Partial, Full",,1,Well-drained,3,3,,"Mildew, Rust, Aphids"
+Yucca,Flower,Full,,0.5,Well-drained,15,130,,"Leaf spot, Blight"
+Boxwood,Shrub,"Partial, Shaded",,2,Well-drained,6,156,,"Spider Mites, Leaf Miners"
+Forsythia,Shrub,Full,,1,Well-drained,8,104,,No serious problems
+Potentilla,Shrub,"Partial, Full",,2,Well-drained,4,52,,No serious problems
+Pyracantha,Shrub,"Partial, Full",,2,Well-drained,10,52,,"Fire blight, Scab; Aphids, Scales, Spidermites, Lace bugs"
+"Rosemary (Tuscan Blue)
+",Shrub,Full,,3,Well drained,3,14,,"Root rot, Powdery Mildew; Aphids, Spittle bugs, Whitefly"
+Mariosousa Willardiana,Tree,Full,,0.5,Well-drained,13,650,,Very resistant
+Callia Secondiflora,Tree,Full,,2,"Dry, Moist",10,208,,White pyralids moths
+Prosopis Glandulosa,Tree,Full,,0.5,Well-drained,10,78,,Very resistant
+Ebenopsis Ebano,Tree,Full,,0.5,Well-drained,15,208,,Very resistant
+Parkinsonia Florida,Tree,Full,,0,Well-drained,10,52,,None
+Ghost Plant,Succulent,"Full, Partial",,1,Sandy,1,14,,Aphids
+Pencil Cactus,Succulent,Full,,0.5,Well-drained,6,52,,"Aphids, Mealybugs, Spider Mites"
+Golden Barrel,Succulent,Full,,0.25,Well-drained,3,78,,"Mealybugs, Greenfly"
+Zebra Cactus,Succulent,Partial,,0.5,Sandy,1.6,78,,"Mealybugs, Spider Mites"
+Queen Victoria Agave,Succulent,Full,,0.25,Well-drained,1.5,520,,None
+Tomato,Fruit-bearing Bush,Full,,4,Moist,2,4,,"Septoria Leaf Spot, Aphids"
+Cucumber,Fruit-bearing Bush,Full,,4,Moist,4,8,,
+Jalapeno,Fruit-bearing Bush,Full,,4,Moist,1.5,11,,
+Potato Plant,Root-vegetable-bearing Bush,Full,,4,Moist,1,10,,"Potato Virus S, Rot"
+Zucchini Plant,Fruit-bearing Bush,Full,,4,Moist,3,7,,Pests
