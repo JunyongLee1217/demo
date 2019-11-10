@@ -1,7 +1,5 @@
 package com.icarus.sapling.ui.myGarden;
 
-import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +21,7 @@ public class MyGardenFragment extends Fragment
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_mygarden, container, false);
         TextView dateView = (TextView) root.findViewById(R.id.dateTextView);
         setDate(dateView);
 

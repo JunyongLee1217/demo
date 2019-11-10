@@ -23,7 +23,7 @@ public class PlantLibraryFragment extends Fragment
     {
         dashboardViewModel = ViewModelProviders.of(this).get(PlantLibraryViewModel.class);
 
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_library, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
         dashboardViewModel.getText().observe(this,
                 new Observer<String>() {

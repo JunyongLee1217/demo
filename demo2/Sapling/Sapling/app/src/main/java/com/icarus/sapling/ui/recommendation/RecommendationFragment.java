@@ -22,7 +22,7 @@ public class RecommendationFragment extends Fragment {
     {
         notificationsViewModel = ViewModelProviders.of(this).get(RecommendationViewModel.class);
 
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        View root = inflater.inflate(R.layout.fragment_recommendation, container, false);
 
         final TextView textView = root.findViewById(R.id.text_notifications);
 

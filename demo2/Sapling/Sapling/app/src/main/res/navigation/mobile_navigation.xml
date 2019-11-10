@@ -9,17 +9,17 @@
         android:id="@+id/navigation_home"
         android:name="com.icarus.sapling.ui.myGarden.MyGardenFragment"
         android:label="@string/title_my_garden"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_myGarden" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.icarus.sapling.ui.plantLibrary.PlantLibraryFragment"
         android:label="@string/title_library"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_library" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.icarus.sapling.ui.recommendation.RecommendationFragment"
         android:label="@string/title_recommendation"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_recommendation" />
 </navigation>
