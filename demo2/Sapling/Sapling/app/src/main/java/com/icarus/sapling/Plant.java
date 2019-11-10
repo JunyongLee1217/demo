@@ -11,6 +11,7 @@ public class Plant {
     private String sun;
     private String vulnerabilities;
     private float yield;
+    private String picture;
 
     public Plant() {}
 
@@ -44,4 +45,43 @@ public class Plant {
     private void setYield(float _yield) {
         yield = _yield;
     }
+    private void setPicture(String _picture) {
+        picture = _picture;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public String getType() {
+        return type;
+    }
+    public float getWaterF() {
+        return waterF;
+    }
+    public float getWaterQ() {
+        return waterQ;
+    }
+    public int setMaturation() {
+        return maturation;
+    }
+    public String getSoilWetness() {
+        return soilWetness;
+    }
+    public float getSpace() {
+        return space;
+    }
+    public String getSun() {
+        return sun;
+    }
+    public String getVulnerabilities() {
+        return vulnerabilities;
+    }
+    public float getYield() {
+        return yield;
+    }
+    public String getPicture() {
+        return picture;
+    }
 }
+
+
