@@ -1,52 +1,62 @@
 package com.icarus.sapling;
+import java.util.ArrayList;
 
 public class Plant {
     private String name;
     private String type;
-    private float waterF;
-    private float waterQ;
+    private double waterF;
+    private double waterQ;
     private int maturation;
     private String soilWetness;
-    private float space;
+    private double space;
     private String sun;
     private String vulnerabilities;
-    private float yield;
+    private double yield;
     private String picture;
+    private boolean inGarden;
 
-    public Plant() {}
+    public ArrayList<Plant> ParseLibrary(String plantdata) {
+        return parseJSON(plantdata);
+    }
+    
+    public Plant() {
+    }
 
-    private void setName(String _name) {
+    public void setName(String _name) {
         name = _name;
     }
-    private void setType(String _type) {
+    public void setType(String _type) {
         type = _type;
     }
-    private void setWaterF(float _waterF) {
+    public void setWaterF(double _waterF) {
         waterF = _waterF;
     }
-    private void setWaterQ(float _waterQ) {
+    public void setWaterQ(double _waterQ) {
         waterQ = _waterQ;
     }
-    private void setMaturation(int _maturation) {
+    public void setMaturation(int _maturation) {
         maturation = _maturation;
     }
-    private void setSoilWetness(String _soilWetness) {
+    public void setSoilWetness(String _soilWetness) {
         soilWetness = _soilWetness;
     }
-    private void setSpace(float _space) {
+    public void setSpace(double _space) {
         space = _space;
     }
-    private void setSun(String _sun) {
+    public void setSun(String _sun) {
         sun = _sun;
     }
-    private void setVulnerabilities(String _vulnerabilities) {
+    public void setVulnerabilities(String _vulnerabilities) {
         vulnerabilities = _vulnerabilities;
     }
-    private void setYield(float _yield) {
+    public void setYield(double _yield) {
         yield = _yield;
     }
-    private void setPicture(String _picture) {
+    public void setPicture(String _picture) {
         picture = _picture;
+    }
+    public void setInGarden(boolean _inGarden) {
+        inGarden = _inGarden;
     }
 
     public String getName() {
@@ -55,19 +65,19 @@ public class Plant {
     public String getType() {
         return type;
     }
-    public float getWaterF() {
+    public double getWaterF() {
         return waterF;
     }
-    public float getWaterQ() {
+    public double getWaterQ() {
         return waterQ;
     }
-    public int setMaturation() {
+    public int getMaturation() {
         return maturation;
     }
     public String getSoilWetness() {
         return soilWetness;
     }
-    public float getSpace() {
+    public double getSpace() {
         return space;
     }
     public String getSun() {
@@ -76,11 +86,14 @@ public class Plant {
     public String getVulnerabilities() {
         return vulnerabilities;
     }
-    public float getYield() {
+    public double getYield() {
         return yield;
     }
     public String getPicture() {
         return picture;
+    }
+    public boolean isInGarden() {
+        return inGarden;
     }
 }
 
