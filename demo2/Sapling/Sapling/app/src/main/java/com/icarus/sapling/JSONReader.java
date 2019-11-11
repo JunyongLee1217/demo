@@ -1,3 +1,6 @@
+// Authored by: Alex Gonzales
+// 11/10/2019
+
 package com.icarus.sapling;
 
  
@@ -23,7 +26,7 @@ public class JSONReader
         return PlantArr;
     }
 
-    private Plant JSONtoPlant(JSONObject obj) throws JSONException{
+    private static Plant JSONtoPlant(JSONObject obj) throws JSONException{
         Plant plnt = new Plant();
         plnt.setName(obj.getString("PLANT_NAME"));
         plnt.setType(obj.getString("PLANT_TYPE"));
