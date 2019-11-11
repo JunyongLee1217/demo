@@ -18,10 +18,6 @@ public class Plant {
     private String picture;
     private boolean inGarden;
 
-    public ArrayList<Plant> ParseLibrary(String plantdata) {
-        return parseJSON(plantdata);
-    }
-    
     public Plant() {
     }
 
