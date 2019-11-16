@@ -14,7 +14,6 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-import static com.icarus.sapling.JSONReader.parseLibrary;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            ArrayList<Plant> library = parseLibrary("plantdata.json");
+            ArrayList<Plant> library = JSONReader.parseLibrary("plantdata.json");
         } catch (JSONException e) {
             e.printStackTrace();
         }
