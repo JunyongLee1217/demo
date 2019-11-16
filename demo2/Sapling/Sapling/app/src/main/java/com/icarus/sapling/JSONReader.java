@@ -16,7 +16,7 @@ import org.json.JSONException;
 public class JSONReader
 {
     @SuppressWarnings("unchecked")
-    public ArrayList<Plant> parseFullLibrary(String plantdata) throws JSONException {
+    public ArrayList<Plant> parseLibrary(String plantdata) throws JSONException {
         ArrayList<Plant> PlantArr = new ArrayList<Plant>();
 
         JSONArray JSarr = new JSONArray(plantdata);
