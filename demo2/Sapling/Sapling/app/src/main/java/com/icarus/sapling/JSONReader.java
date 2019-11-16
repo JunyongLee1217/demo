@@ -16,7 +16,7 @@ import org.json.JSONException;
 public class JSONReader
 {
     @SuppressWarnings("unchecked")
-    public ArrayList<Plant> parseLibrary(String plantdata) throws JSONException {
+    public static ArrayList<Plant> parseLibrary(String plantdata) throws JSONException {
         ArrayList<Plant> PlantArr = new ArrayList<Plant>();
 
         JSONArray JSarr = new JSONArray(plantdata);
@@ -26,7 +26,7 @@ public class JSONReader
         return PlantArr;
     }
 
-    private Plant JSONtoPlant(JSONObject obj) throws JSONException{
+    private static Plant JSONtoPlant(JSONObject obj) throws JSONException{
         Plant plnt = new Plant();
         plnt.setName(obj.getString("PLANT_NAME"));
         plnt.setType(obj.getString("PLANT_TYPE"));
