@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ScrollView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -16,23 +16,14 @@ import com.icarus.sapling.R;
 
 public class RecommendationFragment extends Fragment {
 
-    private RecommendationViewModel notificationsViewModel;
+    private RecommendationViewModel recommendationViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        notificationsViewModel = ViewModelProviders.of(this).get(RecommendationViewModel.class);
+        recommendationViewModel = ViewModelProviders.of(this).get(RecommendationViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_recommendation, container, false);
 
-        final TextView textView = root.findViewById(R.id.text_notifications);
-
-        notificationsViewModel.getText().observe(this,
-                new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 }

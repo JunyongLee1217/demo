@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_library" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_recommendations"
         android:name="com.icarus.sapling.ui.recommendation.RecommendationFragment"
         android:label="@string/title_recommendation"
         tools:layout="@layout/fragment_recommendation" />

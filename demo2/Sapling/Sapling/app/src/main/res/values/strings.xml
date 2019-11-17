@@ -3,4 +3,37 @@
     <string name="title_my_garden">My Garden</string>
     <string name="title_library">Library</string>
     <string name="title_recommendation">Recommendation</string>
+
+    ////Recommendations Strings////
+    <string name="recFragTitle">Plant Recommendations</string>
+
+    //Recommendation question the radio button values
+    //Q1
+    <string name="recQOne">"What type of plant would you like to grow?"</string>
+    <string name="recRbTree">Tree</string>
+    <string name="recRbShrub">Shrub</string>
+    <string name="recRbFlower">Flower</string>
+    <string name="recRbFruiting">Fruiting</string>
+    <string name="recRbSucculent">Succulent</string>
+
+    //Q2
+    <string name="recQTwo">"How much space to grow will your plant have? (ft)"</string>
+    <string name="recRbLess3">>3</string>
+    <string name="recRb3to7">3–7</string>
+    <string name="recRb8to11">8–11</string>
+    <string name="recRb12to15">12–15</string>
+    <string name="recRb15plus">15+</string>
+
+    //Q3
+    <string name="recQThree">"How much time does the plant have to mature? (wk)"</string>
+    <string name="recRbLess14">>14</string>
+    <string name="recRb14to51">14–51</string>
+    <string name="recRb52to77">52–77</string>
+    <string name="recRb78to155">78–155</string>
+    <string name="recRb156plus">156+</string>
+
+    //Result button string
+    <string name="resultsRecBtn">"Results"</string>
+
+    ////Recommendations Strings End////
 </resources>
