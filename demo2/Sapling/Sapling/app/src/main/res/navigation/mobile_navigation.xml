@@ -9,10 +9,10 @@
         android:id="@+id/navigation_home"
         android:name="com.icarus.sapling.ui.myGarden.MyGardenFragment"
         android:label="@string/title_my_garden"
-        tools:layout="@layout/fragment_myGarden" />
+        tools:layout="@layout/fragment_mygarden" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_library"
         android:name="com.icarus.sapling.ui.plantLibrary.PlantLibraryFragment"
         android:label="@string/title_library"
         tools:layout="@layout/fragment_library" />
