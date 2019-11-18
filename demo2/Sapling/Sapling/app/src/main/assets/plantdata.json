@@ -8,8 +8,8 @@
         "SUN": "Partial, Full",
         "VULNERABILITIES": "Powdery mildew, Corynespora Leaf spot, Aphids, Spider mites",
         "WATERF": 1,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD": 0
     },
     {
         "MATURATION": 52,
@@ -20,8 +20,8 @@
         "SUN": "Partial, Full",
         "VULNERABILITIES": "Leaf miners",
         "WATERF": 7,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 14,
@@ -32,8 +32,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Head rot, Stalk rot",
         "WATERF": 1,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 3,
@@ -44,8 +44,8 @@
         "SUN": "Partial, Full",
         "VULNERABILITIES": "Mildew, Rust, Aphids",
         "WATERF": 1,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 130,
@@ -56,8 +56,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Leaf spot, Blight",
         "WATERF": 0.5,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 156,
@@ -68,8 +68,8 @@
         "SUN": "Partial, Shaded",
         "VULNERABILITIES": "Spider Mites, Leaf Miners",
         "WATERF": 2,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 104,
@@ -80,8 +80,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "No serious problems",
         "WATERF": 1,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 52,
@@ -92,8 +92,8 @@
         "SUN": "Partial, Full",
         "VULNERABILITIES": "No serious problems",
         "WATERF": 2,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 52,
@@ -104,8 +104,8 @@
         "SUN": "Partial, Full",
         "VULNERABILITIES": "Fire blight, Scab; Aphids, Scales, Spidermites, Lace bugs",
         "WATERF": 2,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 14,
@@ -116,8 +116,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Root rot, Powdery Mildew; Aphids, Spittle bugs, Whitefly",
         "WATERF": 3,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 650,
@@ -128,8 +128,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Very resistant",
         "WATERF": 0.5,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 208,
@@ -140,8 +140,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "White pyralids moths",
         "WATERF": 2,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 78,
@@ -152,8 +152,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Very resistant",
         "WATERF": 0.5,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 208,
@@ -164,8 +164,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Very resistant",
         "WATERF": 0.5,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 52,
@@ -176,8 +176,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "None",
         "WATERF": 0,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 14,
@@ -188,8 +188,8 @@
         "SUN": "Full, Partial",
         "VULNERABILITIES": "Aphids",
         "WATERF": 1,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 52,
@@ -200,8 +200,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Aphids, Mealybugs, Spider Mites",
         "WATERF": 0.5,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 78,
@@ -212,8 +212,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Mealybugs, Greenfly",
         "WATERF": 0.25,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 78,
@@ -224,8 +224,8 @@
         "SUN": "Partial",
         "VULNERABILITIES": "Mealybugs, Spider Mites",
         "WATERF": 0.5,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 520,
@@ -236,8 +236,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "None",
         "WATERF": 0.25,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 4,
@@ -248,8 +248,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Septoria Leaf Spot, Aphids",
         "WATERF": 4,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 8,
@@ -260,8 +260,8 @@
         "SUN": "Full",
         "VULNERABILITIES": null,
         "WATERF": 4,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 11,
@@ -272,8 +272,8 @@
         "SUN": "Full",
         "VULNERABILITIES": null,
         "WATERF": 4,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 10,
@@ -284,8 +284,8 @@
         "SUN": "Full",
         "VULNERABILITIES": "Potato Virus S, Rot",
         "WATERF": 4,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     },
     {
         "MATURATION": 7,
@@ -296,7 +296,7 @@
         "SUN": "Full",
         "VULNERABILITIES": "Pests",
         "WATERF": 4,
-        "WATERQ": null,
-        "YIELD": null
+        "WATERQ": 0,
+        "YIELD":  0
     }
 ]

@@ -1,6 +1,7 @@
 package com.icarus.sapling;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -12,11 +13,12 @@ import androidx.navigation.ui.NavigationUI;
 
 import org.json.JSONException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    public ArrayList<Plant> library;
+    public static ArrayList<Plant> library;
     public ArrayList<Plant> gardenPlants;
     public ArrayList<Plant> recommendedPlants;
 
@@ -24,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            library = JSONReader.parseLibrary("plantdata.json");
+            library = JSONReader.parseLibrary(MainActivity.this);
         } catch (JSONException e) {
+            Log.e("JSONException", "JSONException in MainActivity");
             e.printStackTrace();
         }
         setContentView(R.layout.activity_main);
