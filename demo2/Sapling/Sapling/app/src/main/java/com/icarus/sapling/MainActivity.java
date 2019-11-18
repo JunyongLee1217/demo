@@ -1,6 +1,8 @@
 package com.icarus.sapling;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,18 +21,24 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<Plant> library;
-    public ArrayList<Plant> gardenPlants;
-    public ArrayList<Plant> recommendedPlants;
+    public static ArrayList<Plant> gardenPlants;
+    public static ArrayList<Plant> recommendedPlants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        try {
-            library = JSONReader.parseLibrary(MainActivity.this);
-        } catch (JSONException e) {
-            Log.e("JSONException", "JSONException in MainActivity");
-            e.printStackTrace();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if (!prefs.getBoolean("firstTime", false)) {
+            try {
+                library = JSONReader.parseLibrary(MainActivity.this);
+            } catch (JSONException e) {
+                Log.e("jsonexception", e.toString());
+            }
+            // mark first time has ran.
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("firstTime", true);
+            editor.commit();
         }
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

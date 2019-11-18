@@ -2,7 +2,6 @@
 // 11/10/2019
 
 package com.icarus.sapling;
-import java.util.ArrayList;
 
 public class Plant {
     private String name;
@@ -48,6 +47,9 @@ public class Plant {
     public void setVulnerabilities(String _vulnerabilities) {
         vulnerabilities = _vulnerabilities;
     }
+    public void putInGarden() { inGarden = true; }
+    public void removeFromGarden() { inGarden = false; }
+
     public void setYield(double _yield) {
         yield = _yield;
     }
@@ -94,6 +96,7 @@ public class Plant {
     public boolean isInGarden() {
         return inGarden;
     }
+
 }
 
 

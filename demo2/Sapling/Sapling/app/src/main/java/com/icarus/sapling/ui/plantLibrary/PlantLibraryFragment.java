@@ -19,11 +19,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.icarus.sapling.MainActivity;
+import com.icarus.sapling.Plant;
 import com.icarus.sapling.R;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+
+import static com.icarus.sapling.MainActivity.gardenPlants;
 
 public class PlantLibraryFragment extends Fragment
 {

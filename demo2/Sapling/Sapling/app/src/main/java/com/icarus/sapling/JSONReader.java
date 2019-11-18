@@ -70,6 +70,7 @@ public class JSONReader
             plnt.setSun(obj.getString("SUN"));
             plnt.setVulnerabilities(obj.getString("VULNERABILITIES"));
             plnt.setYield(obj.getDouble("YIELD"));
+            plnt.removeFromGarden();
         } catch (JSONException e) {
             Log.e("JSONtoPlant", e.toString());
         }
