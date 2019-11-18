@@ -1,11 +1,13 @@
 package com.icarus.sapling.ui.plantLibrary;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -15,12 +17,14 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.icarus.sapling.MainActivity;
 import com.icarus.sapling.Plant;
 import com.icarus.sapling.R;
+import com.icarus.sapling.ui.PlantCareFragment;
 
 import org.w3c.dom.Text;
 
@@ -65,8 +69,6 @@ public class PlantLibraryFragment extends Fragment
         listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,plantNameArray);
         // Set adapter for plantlist
         plantlist.setAdapter(listViewAdapter);
-
-
         return root;
     }
 }

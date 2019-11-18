@@ -23,6 +23,7 @@ import com.icarus.sapling.R;
  * create an instance of this fragment.
  */
 public class PlantCareFragment extends Fragment {
+
     private static TextView name_header;
     private static TextView type_header;
     private static TextView water_frequency_header;
@@ -33,10 +34,10 @@ public class PlantCareFragment extends Fragment {
     private static TextView maturation_header;
     private static TextView vulnerabilities_header;
     private static TextView vulnerabilities_text;
-    private static Plant mPlant;
+    private Plant mPlant;
 
-    public PlantCareFragment() {
-        // Required empty public constructor
+    public PlantCareFragment(Plant plant) {
+        mPlant = plant;
     }
 
     @Override
@@ -47,7 +48,32 @@ public class PlantCareFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         View root = inflater.inflate(R.layout.plant_care, container, false);
+
+        name_header = root.findViewById(R.id.name_header);
+        type_header = root.findViewById(R.id.type_header);
+        water_frequency_header = root.findViewById(R.id.water_frequency_header);
+        sun_requirement_header = root.findViewById(R.id.sun_requirement_header);
+        water_q_text = root.findViewById(R.id.water_q_text);
+        sun_requirement_text = root.findViewById(R.id.sun_requirement_text);
+        maturation_text = root.findViewById(R.id.maturation_text);
+        maturation_header = root.findViewById(R.id.maturation_header);
+        vulnerabilities_header = root.findViewById(R.id.vulnerabilities_header);
+        vulnerabilities_text = root.findViewById(R.id.vulnerabilities_text);
+
+        name_header.setText(mPlant.getName());
+        type_header.setText(mPlant.getType());
+        water_frequency_header.setText("Waterings per week");
+        sun_requirement_header.setText("Sunlight Needed");
+        water_q_text.setText(Double.toString(mPlant.getWaterQ()));
+        sun_requirement_text.setText(mPlant.getSun());
+        maturation_text.setText("" + mPlant.getMaturation() + " weeks");
+        maturation_header.setText("Maturation");
+        vulnerabilities_header.setText("Vulnerabilities");
+        vulnerabilities_text.setText(mPlant.getVulnerabilities());
+
         return null;
     }
 
