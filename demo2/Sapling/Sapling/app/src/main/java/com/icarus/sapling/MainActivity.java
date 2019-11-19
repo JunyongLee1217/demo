@@ -27,18 +27,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences settings = getSharedPreferences("PREFS_NAME", 0);
-        boolean mBoolean = settings.getBoolean("FIRST_RUN", false);
-        if (!mBoolean) {
-            try {
-                library = JSONReader.parseLibrary(MainActivity.this);
-            } catch (JSONException e) {
-                Log.e("jsonexception", e.toString());
-            }
-            // mark first time has ran.
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putBoolean("FIRST_RUN", true);
-            editor.commit();
+        try {
+            library = JSONReader.parseLibrary(MainActivity.this);
+        } catch (JSONException e) {
+            Log.e("jsonexception", e.toString());
         }
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
