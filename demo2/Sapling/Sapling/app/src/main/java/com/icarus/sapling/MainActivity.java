@@ -1,13 +1,21 @@
 package com.icarus.sapling;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -42,5 +50,33 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
+    public static View loadList(Context context, ArrayList<Plant> mList, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ArrayList<String> plantNameArray = new ArrayList<String>();
+        ArrayList<String> plantTypeArray = new ArrayList<String>();
+        ArrayAdapter<String> listViewAdapter;
+        ListView plantlist;
+        try {
+            for (int i = 0; i < mList.size(); i++) {
+                plantNameArray.add(i, mList.get(i).getName());
+                plantNameArray.set(i, plantNameArray.get(i) + ": "+ mList.get(i).getType());
+            }
+        } catch (NullPointerException e) {
+            Log.e("NullPointerE", e.toString());
+            e.printStackTrace();
+        } catch (IndexOutOfBoundsException e) {
+            Log.e("IndexOutOfBounds", e.toString());
+            e.printStackTrace();
+        }
+
+        View root = inflater.inflate(R.layout.fragment_library, container, false);
+
+        // find by id plantlist view
+        plantlist = (ListView) root.findViewById(R.id.plantList);
+
+        listViewAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1,plantNameArray);
+        // Set adapter for plantlist
+        plantlist.setAdapter(listViewAdapter);
+        return root;
     }
 }
