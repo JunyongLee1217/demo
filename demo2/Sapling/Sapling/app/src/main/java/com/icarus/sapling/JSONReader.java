@@ -27,7 +27,7 @@ public class JSONReader
     private static Context mContext;
     private static String plantdata;
     @SuppressWarnings("unchecked")
-    public static ArrayList<Plant> parseLibrary(Context context) throws JSONException {
+    public static ArrayList<Plant> parseLibrary(Context context) {
         ArrayList<Plant> PlantArr = new ArrayList<Plant>();
         mContext = context;
         BufferedReader reader = null;
@@ -48,15 +48,19 @@ public class JSONReader
             Log.e("IOException", "IOException in parseLibrary");
             e.printStackTrace();
         }
-        JSONArray JSarr = new JSONArray(plantdata);
-        for(int i = 0; i < JSarr.length(); i++) {
-            PlantArr.add(i, JSONtoPlant((JSONObject) JSarr.get(i)));
-            Log.i("Plant Name", PlantArr.get(i).getName());
+        try {
+            JSONArray JSarr = new JSONArray(plantdata);
+            for(int i = 0; i < JSarr.length(); i++) {
+                PlantArr.add(i, JSONtoPlant((JSONObject) JSarr.get(i)));
+                Log.i("Plant Name", PlantArr.get(i).getName());
+            }
+        } catch(JSONException e) {
+            Log.e("JSONException", "Failed to make JSONArray from plantdata");
         }
         return PlantArr;
     }
 
-    private static Plant JSONtoPlant(JSONObject obj) throws JSONException{
+    private static Plant JSONtoPlant(JSONObject obj) {
         Log.e("JSONtoPlant", "JSONObject converting to Plant");
         Plant plnt = new Plant();
         try {

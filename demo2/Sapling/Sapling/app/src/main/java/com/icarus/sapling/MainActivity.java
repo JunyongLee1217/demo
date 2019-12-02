@@ -14,16 +14,10 @@ import android.widget.ListView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -35,11 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try {
-            library = JSONReader.parseLibrary(MainActivity.this);
-        } catch (JSONException e) {
-            Log.e("jsonexception", e.toString());
-        }
+        library = JSONReader.parseLibrary(MainActivity.this);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -51,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
     }
+
+
     public static View loadList(Context context, ArrayList<Plant> mList, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ArrayList<String> plantNameArray = new ArrayList<String>();
         ArrayList<String> plantTypeArray = new ArrayList<String>();
