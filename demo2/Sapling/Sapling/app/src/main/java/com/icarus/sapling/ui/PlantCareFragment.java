@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.icarus.sapling.Plant;
@@ -24,6 +25,7 @@ import com.icarus.sapling.R;
  */
 public class PlantCareFragment extends Fragment {
 
+    private static Button garden_button;
     private static TextView name_header;
     private static TextView type_header;
     private static TextView water_frequency_header;
@@ -49,9 +51,10 @@ public class PlantCareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // mPlant = something of type Plant
 
         View root = inflater.inflate(R.layout.plant_care, container, false);
-
+        garden_button = root.findViewById(R.id.garden_button);
         name_header = root.findViewById(R.id.name_header);
         type_header = root.findViewById(R.id.type_header);
         water_frequency_header = root.findViewById(R.id.water_frequency_header);
@@ -63,6 +66,13 @@ public class PlantCareFragment extends Fragment {
         vulnerabilities_header = root.findViewById(R.id.vulnerabilities_header);
         vulnerabilities_text = root.findViewById(R.id.vulnerabilities_text);
 
+        /*
+        * When mPlant.isInGarden() == true, garden_button says "remove from Garden"
+        * When mPlant.isInGarden() == false, garden_button says "add to Garden"
+        * When garden_button is clicked and mPlant.isInGarden() == true, mPlant.putInGarden()
+        * When garden_button is clicked and mPlant.isInGarden() == false, mPlant.removeFromGarden()
+         */
+        
         name_header.setText(mPlant.getName());
         type_header.setText(mPlant.getType());
         water_frequency_header.setText("Waterings per week");
@@ -74,7 +84,7 @@ public class PlantCareFragment extends Fragment {
         vulnerabilities_header.setText("Vulnerabilities");
         vulnerabilities_text.setText(mPlant.getVulnerabilities());
 
-        return null;
+        return root;
     }
 
     /**

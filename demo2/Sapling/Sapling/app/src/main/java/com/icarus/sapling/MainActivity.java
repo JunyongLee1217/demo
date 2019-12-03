@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        library = new ArrayList<Plant>();
         library = JSONReader.parseLibrary(MainActivity.this);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -41,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
     }
+// Int destination: 1 for myGarden (scheduler xml), 2 for Library and Recommendation (Plant care xml)
 
-
-    public static View loadList(Context context, ArrayList<Plant> mList, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public static View loadList(Context context, ArrayList<Plant> mList, int destination, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ArrayList<String> plantNameArray = new ArrayList<String>();
         ArrayList<String> plantTypeArray = new ArrayList<String>();
         ArrayAdapter<String> listViewAdapter;
@@ -67,8 +68,20 @@ public class MainActivity extends AppCompatActivity {
         plantlist = (ListView) root.findViewById(R.id.plantList);
 
         listViewAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1,plantNameArray);
-        // Set adapter for plantlist
+        /*
+        * Implement an onClickListener here, and through that listener and using 'findPlant(___)'
+        * Specify the plant whose properties (as specified in Plant.java) will be communicated to the PlantCareFragment and Scheduler Fragment
+         */
+
+        // Plant thisplant = whatever's clicked
         plantlist.setAdapter(listViewAdapter);
         return root;
+    }
+
+    public static Plant findPlant(String name) {
+        for(int i = 0; i < MainActivity.library.size(); i++) {
+            if(MainActivity.library.get(i).getName().contentEquals(name)) return MainActivity.library.get(i);
+        }
+        return null;
     }
 }

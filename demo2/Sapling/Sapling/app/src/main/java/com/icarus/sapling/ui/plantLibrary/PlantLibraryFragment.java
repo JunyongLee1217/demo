@@ -17,6 +17,6 @@ public class PlantLibraryFragment extends Fragment
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         libraryViewModel = ViewModelProviders.of(this).get(PlantLibraryViewModel.class);
-        return MainActivity.loadList(this.getActivity(), MainActivity.library, inflater, container, savedInstanceState);
+        return MainActivity.loadList(this.getActivity(), MainActivity.library, 2, inflater, container, savedInstanceState);
     }
 }

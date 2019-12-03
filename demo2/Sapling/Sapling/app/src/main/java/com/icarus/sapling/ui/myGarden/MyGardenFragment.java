@@ -4,6 +4,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,11 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
+import com.icarus.sapling.MainActivity;
+import com.icarus.sapling.Plant;
 import com.icarus.sapling.R;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MyGardenFragment extends Fragment
@@ -25,15 +29,29 @@ public class MyGardenFragment extends Fragment
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+        MainActivity.gardenPlants = new ArrayList<Plant>();
+        int j = 0;
+        for(int i = 0; i < MainActivity.library.size(); i++) {
+            try {
+                if (MainActivity.library.get(i).isInGarden()) {
+                    MainActivity.gardenPlants.add(j, MainActivity.library.get(i));
+                    Log.i("Added Plant", MainActivity.gardenPlants.get(j).getName());
+                    j++;
+                }
+            } catch (NullPointerException e) {
+                Log.e("Failed Plant", "");
+            }
+        }
         createNotificationChannels();
-
+        View root = MainActivity.loadList(this.getActivity(), MainActivity.gardenPlants, 1, inflater, container, savedInstanceState);
+        /*
         View root = inflater.inflate(R.layout.fragment_mygarden, container, false);
         TextView dateView = (TextView) root.findViewById(R.id.dateTextView);
         setDate(dateView);
 
         TextView plantText = (TextView) root.findViewById(R.id.plantOneTextView);
         setText(plantText, "This is where I get the name of the plant from the database");
-
+        */
         return root;
     }
 
