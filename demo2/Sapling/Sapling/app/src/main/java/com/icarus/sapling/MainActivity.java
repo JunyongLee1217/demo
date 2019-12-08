@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 // Int destination: 1 for myGarden (scheduler xml), 2 for Library and Recommendation (Plant care xml)
 
-    public static View loadList(Context context, ArrayList<Plant> mList, int destination, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public static View loadList(Context context, ArrayList<Plant> mList, final int destination, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ArrayList<String> plantNameArray = new ArrayList<String>();
         ArrayList<String> plantTypeArray = new ArrayList<String>();
         ArrayAdapter<String> listViewAdapter;
@@ -92,15 +92,27 @@ public class MainActivity extends AppCompatActivity {
                 // Get the corresponding plant object pertaining to the clicked item in the list view
                 Plant mPlant = findPlant(plantlist.getItemAtPosition(position).toString());
 
-                //  Create a new fragment object with the appropriate plant object as a parameter
-                PlantCareFragment plantCareFragment = new PlantCareFragment(mPlant);
-
                 // Since loadList is a static method we must give it more information about which activity it belongs to
                 FragmentActivity activity = (FragmentActivity) view.getContext();
                 FragmentManager manager = activity.getSupportFragmentManager();
 
-                // Go to the plantcare page
-                manager.beginTransaction().replace(R.id.myGardenLayout, new MyGardenFragment()).commit();
+                switch (destination)
+                {
+                    case 1:
+                        //  Create a new fragment object with the appropriate plant object as a parameter
+                        // SchedulerFragment schedulerFragment = new SchedulerFragment(mPlant);
+
+                        // Go to the scheduler page
+                        //manager.beginTransaction().replace(R.id.schedulerLayout, schedulerFragment).commit();
+                        break;
+                    case 2:
+                        //  Create a new fragment object with the appropriate plant object as a parameter
+                        PlantCareFragment plantCareFragment = new PlantCareFragment(mPlant);
+
+                        // Go to the plantCare page
+                        manager.beginTransaction().replace(R.id.myGardenLayout, plantCareFragment).commit();
+                        break;
+                }
             }
         });
 
