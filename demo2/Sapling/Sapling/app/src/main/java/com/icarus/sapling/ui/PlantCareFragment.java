@@ -1,6 +1,8 @@
 package com.icarus.sapling.ui;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -20,10 +22,11 @@ import com.icarus.sapling.R;
  * Activities that contain this fragment must implement the
  * {@link PlantCareFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PlantCareFragment#newInstance} factory method to
+ * Use the  factory method to
  * create an instance of this fragment.
  */
-public class PlantCareFragment extends Fragment {
+public class PlantCareFragment extends Fragment
+{
 
     private static Button garden_button;
     private static TextView name_header;
@@ -38,21 +41,21 @@ public class PlantCareFragment extends Fragment {
     private static TextView vulnerabilities_text;
     private Plant mPlant;
 
-    public PlantCareFragment(Plant plant) {
+    public PlantCareFragment(Plant plant)
+    {
         mPlant = plant;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        // mPlant = something of type Plant
-
+                             Bundle savedInstanceState)
+    {
         View root = inflater.inflate(R.layout.plant_care, container, false);
         garden_button = root.findViewById(R.id.garden_button);
         name_header = root.findViewById(R.id.name_header);
@@ -66,14 +69,36 @@ public class PlantCareFragment extends Fragment {
         vulnerabilities_header = root.findViewById(R.id.vulnerabilities_header);
         vulnerabilities_text = root.findViewById(R.id.vulnerabilities_text);
 
-        /*
-        * When mPlant.isInGarden() == true, garden_button says "remove from Garden"
-        * When mPlant.isInGarden() == false, garden_button says "add to Garden"
-        * When garden_button is clicked and mPlant.isInGarden() == true, mPlant.putInGarden()
-        * When garden_button is clicked and mPlant.isInGarden() == false, mPlant.removeFromGarden()
-         */
-        
-        name_header.setText(mPlant.getName());
+        if (mPlant.isInGarden())
+        {
+            garden_button.setText("Remove from garden");
+        }
+        else
+        {
+            garden_button.setText("Add to garden");
+        }
+
+        garden_button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if (!mPlant.isInGarden())
+                {
+                    mPlant.putInGarden();
+                    garden_button.setText("Remove from garden");
+
+                }
+                else
+                {
+                    mPlant.removeFromGarden();
+                    garden_button.setText("Add to garden");
+                }
+
+            }
+        });
+
+                name_header.setText(mPlant.getName());
         type_header.setText(mPlant.getType());
         water_frequency_header.setText("Waterings per week");
         sun_requirement_header.setText("Sunlight Needed");
