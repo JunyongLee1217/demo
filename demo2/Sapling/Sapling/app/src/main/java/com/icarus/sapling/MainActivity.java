@@ -1,5 +1,6 @@
 package com.icarus.sapling;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,12 +9,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.icarus.sapling.ui.PlantCareFragment;
+import com.icarus.sapling.ui.myGarden.MyGardenFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -25,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Plant> library;
     public static ArrayList<Plant> gardenPlants;
     public static ArrayList<Plant> recommendedPlants;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> plantNameArray = new ArrayList<String>();
         ArrayList<String> plantTypeArray = new ArrayList<String>();
         ArrayAdapter<String> listViewAdapter;
-        ListView plantlist;
+        final ListView plantlist;
         try {
             for (int i = 0; i < mList.size(); i++) {
                 plantNameArray.add(i, mList.get(i).getName());
-                plantNameArray.set(i, plantNameArray.get(i) + ": "+ mList.get(i).getType());
+                //plantNameArray.set(i, plantNameArray.get(i) + ": "+ mList.get(i).getType());
             }
         } catch (NullPointerException e) {
             Log.e("NullPointerE", e.toString());
@@ -75,10 +83,31 @@ public class MainActivity extends AppCompatActivity {
 
         // Plant thisplant = whatever's clicked
         plantlist.setAdapter(listViewAdapter);
+
+        plantlist.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                // Get the corresponding plant object pertaining to the clicked item in the list view
+                Plant mPlant = findPlant(plantlist.getItemAtPosition(position).toString());
+
+                //  Create a new fragment object with the appropriate plant object as a parameter
+                PlantCareFragment plantCareFragment = new PlantCareFragment(mPlant);
+
+                // Since loadList is a static method we must give it more information about which activity it belongs to
+                FragmentActivity activity = (FragmentActivity) view.getContext();
+                FragmentManager manager = activity.getSupportFragmentManager();
+
+                // Go to the plantcare page
+                manager.beginTransaction().replace(R.id.myGardenLayout, new MyGardenFragment()).commit();
+            }
+        });
+
         return root;
     }
 
-    public static Plant findPlant(String name) {
+    private static Plant findPlant(String name) {
         for(int i = 0; i < MainActivity.library.size(); i++) {
             if(MainActivity.library.get(i).getName().contentEquals(name)) return MainActivity.library.get(i);
         }
