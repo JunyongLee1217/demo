@@ -28,14 +28,16 @@ import androidx.navigation.ui.NavigationUI;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
     public static ArrayList<Plant> library;
     public static ArrayList<Plant> gardenPlants;
     public static ArrayList<Plant> recommendedPlants;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         library = new ArrayList<Plant>();
         library = JSONReader.parseLibrary(MainActivity.this);
@@ -52,20 +54,24 @@ public class MainActivity extends AppCompatActivity {
     }
 // Int destination: 1 for myGarden (scheduler xml), 2 for Library and Recommendation (Plant care xml)
 
-    public static View loadList(Context context, ArrayList<Plant> mList, final int destination, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public static View loadList(final Context context, ArrayList<Plant> mList, final int destination, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ArrayList<String> plantNameArray = new ArrayList<String>();
         ArrayList<String> plantTypeArray = new ArrayList<String>();
         ArrayAdapter<String> listViewAdapter;
         final ListView plantlist;
-        try {
-            for (int i = 0; i < mList.size(); i++) {
+        try
+        {
+            for (int i = 0; i < mList.size(); i++)
+            {
                 plantNameArray.add(i, mList.get(i).getName());
                 //plantNameArray.set(i, plantNameArray.get(i) + ": "+ mList.get(i).getType());
             }
-        } catch (NullPointerException e) {
+        } catch (NullPointerException e)
+        {
             Log.e("NullPointerE", e.toString());
             e.printStackTrace();
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e)
+        {
             Log.e("IndexOutOfBounds", e.toString());
             e.printStackTrace();
         }
@@ -110,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         PlantCareFragment plantCareFragment = new PlantCareFragment(mPlant);
 
                         // Go to the plantCare page
-                        manager.beginTransaction().replace(R.id.myGardenLayout, plantCareFragment).commit();
+                        manager.beginTransaction().replace(R.id.plantCareLayout, plantCareFragment).commit();
                         break;
                 }
             }
@@ -119,8 +125,10 @@ public class MainActivity extends AppCompatActivity {
         return root;
     }
 
-    private static Plant findPlant(String name) {
-        for(int i = 0; i < MainActivity.library.size(); i++) {
+    private static Plant findPlant(String name)
+    {
+        for(int i = 0; i < MainActivity.library.size(); i++)
+        {
             if(MainActivity.library.get(i).getName().contentEquals(name)) return MainActivity.library.get(i);
         }
         return null;

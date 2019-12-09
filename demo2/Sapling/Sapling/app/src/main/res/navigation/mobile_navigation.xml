@@ -22,4 +22,9 @@
         android:name="com.icarus.sapling.ui.recommendation.RecommendationFragment"
         android:label="@string/title_recommendation"
         tools:layout="@layout/fragment_recommendation" />
+    <fragment
+        android:id="@+id/plantCareFragment"
+        android:name="com.icarus.sapling.ui.PlantCareFragment"
+        android:label="plant_care"
+        tools:layout="@layout/plant_care" />
 </navigation>
