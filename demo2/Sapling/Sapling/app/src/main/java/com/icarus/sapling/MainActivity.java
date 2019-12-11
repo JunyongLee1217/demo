@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity
                         // SchedulerFragment schedulerFragment = new SchedulerFragment(mPlant);
 
                         // Go to the scheduler page
-                        //manager.beginTransaction().replace(R.id.schedulerLayout, schedulerFragment).commit();
+                        //transaction.replace(R.id.myGardenLayout, schedulerFragment).commit();
                         break;
                     case 2:
                         //  Create a new fragment object with the appropriate plant object as a parameter
