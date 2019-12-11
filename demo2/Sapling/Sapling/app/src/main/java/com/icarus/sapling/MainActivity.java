@@ -1,6 +1,5 @@
 package com.icarus.sapling;
 
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -21,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -101,11 +101,11 @@ public class MainActivity extends AppCompatActivity
                 // Since loadList is a static method we must give it more information about which activity it belongs to
                 FragmentActivity activity = (FragmentActivity) view.getContext();
                 FragmentManager manager = activity.getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
 
                 switch (destination)
                 {
                     case 1:
-                        //  Create a new fragment object with the appropriate plant object as a parameter
                         // SchedulerFragment schedulerFragment = new SchedulerFragment(mPlant);
 
                         // Go to the scheduler page
@@ -113,10 +113,11 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 2:
                         //  Create a new fragment object with the appropriate plant object as a parameter
-                        PlantCareFragment plantCareFragment = new PlantCareFragment(mPlant);
-
                         // Go to the plantCare page
-                        manager.beginTransaction().replace(R.id.plantCareLayout, plantCareFragment).commit();
+                        PlantCareFragment plantCareFragment = new PlantCareFragment(mPlant);
+                        plantlist.setAdapter(null);
+                        transaction.replace(R.id.plantLibraryLayout, plantCareFragment);
+                        transaction.commit();
                         break;
                 }
             }

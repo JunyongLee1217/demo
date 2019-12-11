@@ -51,7 +51,6 @@ public class JSONReader
         }
         try {
             JSONArray JSarr = new JSONArray(plantdata);
-            count = 0;
             for(int i = 0; i < JSarr.length(); i++) {
                 PlantArr.add(i, JSONtoPlant((JSONObject) JSarr.get(i)));
                 Log.i("Plant Name", PlantArr.get(i).getName());
@@ -77,8 +76,6 @@ public class JSONReader
             plnt.setVulnerabilities(obj.getString("VULNERABILITIES"));
             plnt.setYield(obj.getDouble("YIELD"));
             plnt.removeFromGarden();
-            if(count % 2 == 0) plnt.putInGarden();
-            count++;
         } catch (JSONException e) {
             Log.e("JSONtoPlant", e.toString());
         }
