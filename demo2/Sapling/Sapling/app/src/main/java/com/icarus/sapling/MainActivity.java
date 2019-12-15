@@ -25,6 +25,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -32,8 +34,7 @@ public class MainActivity extends AppCompatActivity
 {
     public static ArrayList<Plant> library;
     public static ArrayList<Plant> gardenPlants;
-    public static ArrayList<Plant> recommendedPlants;
-
+    //public static ArrayList<Plant> recommendedPlants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
