@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:id="@+id/recConLay"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginBottom="60dp"
+    >
 
-    <ScrollView
-        android:id="@+id/recSV"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/recTitleTv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="0dp"
+            android:baselineAligned="false"
+            android:text="@string/recFragTitle"
+            android:textColor="@color/saplingGreen"
+            android:textSize="30sp"
+         />
 
 
-            <TextView
-                android:id="@+id/recTitleTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:baselineAligned="false"
-                android:text="@string/recFragTitle"
-                android:textColor="@color/saplingGreen"
-                android:textSize="30sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
+        <RadioGroup
+            android:id="@+id/radiogr1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            >
             <TextView
                 android:id="@+id/qOneTv"
                 android:layout_width="wrap_content"
@@ -43,51 +46,52 @@
                 android:text="@string/recQOne"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recTitleTv" />
-
-            <RadioGroup
-                android:id="@+id/qOneRbGrp"
+            <RadioButton
+                android:id="@+id/aTypeRb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:checkedButton="@id/aSpaceRb"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/qOneTv">
+                android:checked="true"
+                android:text="Tree" />
 
-                <RadioButton
-                    android:id="@+id/aTypeRb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/recRbTree" />
+            <RadioButton
+                android:id="@+id/bTypeRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shrub" />
 
-                <RadioButton
-                    android:id="@+id/bTypeRb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRbShrub" />
+            <RadioButton
+                android:id="@+id/cTypeRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recRbFlower" />
 
-                <RadioButton
-                    android:id="@+id/cTypeRb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRbFlower" />
+            <RadioButton
+                android:id="@+id/dTypeRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fruit-bearing Bush" />
 
-                <RadioButton
-                    android:id="@+id/dTypeRb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRbFruiting" />
-
-                <RadioButton
-                    android:id="@+id/eTypeRb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRbSucculent" />
-            </RadioGroup>
+            <RadioButton
+                android:id="@+id/eTypeRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Succulent" />
+        </RadioGroup>
 
 
+
+
+
+        <RadioGroup
+            android:id="@+id/radiogr2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:checkedButton="@id/aSpaceRb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qTwoTv">
             <TextView
                 android:id="@+id/qTwoTv"
                 android:layout_width="wrap_content"
@@ -97,51 +101,52 @@
                 android:layout_marginTop="32dp"
                 android:text="@string/recQTwo"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/qOneRbGrp" />
-
-            <RadioGroup
-                android:id="@+id/qTwoRbGrp"
-                android:layout_width="wrap_content"
+                 />
+            <RadioButton
+                android:id="@+id/aSpaceRb"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:checkedButton="@id/aSpaceRb"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/qTwoTv">
+                android:text="3" />
 
-                <RadioButton
-                    android:id="@+id/aSpaceRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRbLess3" />
+            <RadioButton
+                android:id="@+id/bSpaceRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3-7" />
 
-                <RadioButton
-                    android:id="@+id/bSpaceRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb3to7" />
+            <RadioButton
+                android:id="@+id/cSpaceRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8-11" />
 
-                <RadioButton
-                    android:id="@+id/cSpaceRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb8to11" />
+            <RadioButton
+                android:id="@+id/dSpaceRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12-15" />
 
-                <RadioButton
-                    android:id="@+id/dSpaceRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb12to15" />
+            <RadioButton
+                android:id="@+id/eSpaceRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15+" />
 
-                <RadioButton
-                    android:id="@+id/eSpaceRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb15plus" />
+        </RadioGroup>
 
-            </RadioGroup>
 
+
+
+        <RadioGroup
+            android:id="@+id/radiogr3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:checkedButton="@id/aMatRb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qThreeTv">
             <TextView
                 android:id="@+id/qThreeTv"
                 android:layout_width="wrap_content"
@@ -152,64 +157,47 @@
                 android:text="@string/recQThree"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/qTwoRbGrp" />
-
-            <RadioGroup
-                android:id="@+id/qThreeRbGrp"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/aMatRb"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:checkedButton="@id/aMatRb"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/qThreeTv">
+                android:text="@string/recRbLess14" />
 
-                <RadioButton
-                    android:id="@+id/aMatRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRbLess14" />
-
-                <RadioButton
-                    android:id="@+id/bMatRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb14to51" />
-
-                <RadioButton
-                    android:id="@+id/cMatRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb52to77" />
-
-                <RadioButton
-                    android:id="@+id/dMatRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb78to155" />
-
-                <RadioButton
-                    android:id="@+id/eMatRb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recRb156plus" />
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/resultsRecBtn"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/bMatRb"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/fireBrickRed"
-                android:text="@string/resultsRecBtn"
-                android:textSize="32sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/qThreeRbGrp"
-                app:layout_constraintTop_toTopOf="@id/qThreeRbGrp" />
+                android:text="@string/recRb14to51" />
+
+            <RadioButton
+                android:id="@+id/cMatRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recRb52to77" />
+
+            <RadioButton
+                android:id="@+id/dMatRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recRb78to155" />
+
+            <RadioButton
+                android:id="@+id/eMatRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recRb156plus" />
 
 
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+
+    </LinearLayout>
+
+
+</ScrollView>
+
