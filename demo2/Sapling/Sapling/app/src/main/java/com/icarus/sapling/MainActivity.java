@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.icarus.sapling.ui.PlantCareFragment;
 import com.icarus.sapling.ui.myGarden.MyGardenFragment;
+import com.icarus.sapling.ui.myGarden.SchedulerFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -102,18 +103,19 @@ public class MainActivity extends AppCompatActivity
                 FragmentActivity activity = (FragmentActivity) view.getContext();
                 FragmentManager manager = activity.getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
-
+                SchedulerFragment schedulerFragment = new SchedulerFragment(mPlant);
                 switch (destination)
                 {
                     case 1:
-                        // SchedulerFragment schedulerFragment = new SchedulerFragment(mPlant);
-
-                        // Go to the scheduler page
-                        //transaction.replace(R.id.myGardenLayout, schedulerFragment).commit();
+                        //SchedulerFragment schedulerFragment = new SchedulerFragment(mPlant);
+                        plantlist.setAdapter(null);
+                        transaction.replace(R.id.plantLibraryLayout, schedulerFragment);
+                        transaction.commit();
                         break;
                     case 2:
                         //  Create a new fragment object with the appropriate plant object as a parameter
                         // Go to the plantCare page
+
                         PlantCareFragment plantCareFragment = new PlantCareFragment(mPlant);
                         plantlist.setAdapter(null);
                         transaction.replace(R.id.plantLibraryLayout, plantCareFragment);
