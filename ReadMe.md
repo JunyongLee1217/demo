@@ -31,7 +31,7 @@ This fragment is for displaying the stored plant list and showing the watering s
 Whenever the user lands to this page, the Arraylist 'gardenPlants' keep being renewing its data.
 The Arraylist 'gardenPlants' has plant objects as its elements. One of attribute of each plant object is boolean method 'isInGarden'. By using this, the 'gardenPlants' is able to keep the changed plant list.
 
-**The scheduler functions will be added in the future work.
+When an item within the myGarden fragment is clicked, a scheduler page will reveal itelf displaying the next watering date for that specific plant.
 
 
 ===plantLibrary===
