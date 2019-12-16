@@ -31,6 +31,8 @@ This fragment is for displaying the stored plant list and showing the watering s
 Whenever the user lands to this page, the Arraylist 'gardenPlants' keep being renewing its data.
 The Arraylist 'gardenPlants' has plant objects as its elements. One of attribute of each plant object is boolean method 'isInGarden'. By using this, the 'gardenPlants' is able to keep the changed plant list.
 
+**The scheduler functions will be added in the future work.
+
 
 ===plantLibrary===
 
@@ -53,6 +55,8 @@ Each radio button represents the conditions that user wants to be recommended. O
 
 In the onClickListener of the submission button, it calls another activity called 
 SubActivity.java'. In SubAcitivity, it converts the intent of arraylist into the listview.
+
+
 
 ### Testing
 
